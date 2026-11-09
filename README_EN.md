@@ -5,7 +5,7 @@
 **A workspace for creating Lua projects inside GameGuardian.**  
 Build menus, use templates and assemble scripts without leaving the studio.
 
-[![Version](https://img.shields.io/badge/version-0.21-7c5cff?style=for-the-badge)](manifest.json)
+[![Version](https://img.shields.io/badge/version-0.22-7c5cff?style=for-the-badge)](manifest.json)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.21
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.22
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     interface templates
@@ -97,7 +97,7 @@ Templates are starting points. Review and adapt them for your project.
 | Environment | [GameGuardian](https://gameguardian.net) |
 | Internet | Required to check `manifest.json` on GitHub at startup |
 | Storage | Permission to read and write in `Download` |
-| Version | `0.21` (see `manifest.json`) |
+| Version | `0.22` (see `manifest.json`) |
 
 Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
 
@@ -115,11 +115,25 @@ GGDevStudio/
 ├── manifest.json             # release version
 ├── README.md                 # Russian documentation
 ├── README_EN.md              # English documentation
+├── modules/                  # module list and Lua modules
+├── examples/                 # example data
 └── LICENSE                   # MPL-2.0
 ```
 
 
 ## 🆕 Release notes
+
+### 0.22 · Module Hub
+
+Extract the **`modules`** folder from the release archive into `Download`, so `Download/modules/modules.txt` and the five Lua files are together. Optional CSV/TSV examples are in `examples`. Approve trusted modules at startup, then open **Tools → Module Hub**. The studio can run without modules; use the hub to inspect errors or reload them.
+
+The five modules provide project metrics, text-based code auditing, a literal `require` dependency map, CSV-to-Lua conversion and TSV translation-table generation. Analysis is heuristic and does not guarantee security or completeness. CSV and TSV are data, not executable code; adding generated Lua requires confirmation. Generated tables are local to the added block. CSV fields are strings.
+
+**Trust:** modules are unsandboxed Lua with the studio's full privileges and are not checked against GitHub. Load only files you trust. The automatic updater updates **only the main studio file**; install or update modules separately from the release archive. Publish the `modules` folder and `modules.txt` with the repository files.
+
+GameGuardian cannot normally start an external Python interpreter and blocks `os.execute`; direct Python modules are not supported. Instead, prepare CSV or TSV in Python and import those data files with the supplied Lua modules.
+
+To add a module, put its ID (letters, digits, `_` or `-`) in `modules.txt` and provide `<ID>.lua` in the same folder, then reload. Up to 32 entries are loaded. Return a table: `return {name = 'Name', run = function(ctx) ... end}`. Context offers `project` (a snapshot or `nil`), `root`, `read_file(path, limit)`, `alert(text)`, `report(text)` and `offer_code(title, code, info)`. Modules still have access to globals and are not sandboxed.
 
 ### 0.21
 
