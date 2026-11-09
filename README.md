@@ -3,35 +3,35 @@
 # ✳ GG Developer Studio
 
 **Среда разработки Lua-проектов прямо внутри GameGuardian.**
-Пишешь код, собираешь меню, компилируешь готовый скрипт — не выходя из студии.
+Пишешь код, собираешь меню, собираешь готовый скрипт — не выходя из студии.
 
-[![Version](https://img.shields.io/badge/version-0.16-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
+[![Version](https://img.shields.io/badge/version-0.17-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/nearzvx/GGDevStudio?style=for-the-badge&color=ffcc33)](https://github.com/nearzvx/GGDevStudio/stargazers)
 
-[**Сайт студии**](https://ggstudio.freedev.app) · [**Скачать**](https://ggstudio.freedev.app) · [**Ошибка**](https://github.com/nearzvx/GGDevStudio/issues/new) · [**Идея**](https://github.com/nearzvx/GGDevStudio/issues/new)
+[**Сайт студии**](https://ggstudio.freedev.app) · [**Скачать**](https://github.com/nearzvx/GGDevStudio/blob/main/GG_Developer_Studio.lua) · [**Ошибка**](https://github.com/nearzvx/GGDevStudio/issues/new) · [**Идея**](https://github.com/nearzvx/GGDevStudio/issues/new)
 
 </div>
 
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.16
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.17
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
-  blocks     templates/ui/pretty_menu
-             templates/strings/format
-             custom/core.logic        ← твой код
+  blocks     шаблоны интерфейса
+             шаблоны строк
+             собственный Lua-код     ← твой код
   check      ✓ синтаксис в порядке
-  build      ⚡ готовый скрипт  →  Download/my_next_idea.lua
+  build      ⚡ готовый скрипт  →  Download/my_next_idea_generated.lua
   ──────────────────────────────────────────────────────────────
   ● READY TO CREATE
 ```
 
 <div align="center">
-<sub>Одна идея меняет всё. От идеи до скрипта — несколько нажатий.</sub>
+<sub>Одна идея меняет всё. Разработчик: BinaryMoon.</sub>
 </div>
 
 ---
@@ -40,7 +40,7 @@
 
 **GG Developer Studio** — это полноценная рабочая среда для Lua-разработчиков под Android, которая живёт **внутри GameGuardian** и написана на **чистом Lua**.
 
-Больше не нужно собирать скрипт из десяти файлов в блокноте, вручную склеивать меню и ловить синтаксические ошибки уже на телефоне при запуске. Студия берёт рутину на себя: структура проекта, шаблоны, проверка кода, заметки, задачи, резервные копии — и **компиляция прямо в студии** в один готовый `.lua`-файл.
+Больше не нужно собирать скрипт из десяти файлов в блокноте, вручную склеивать меню и ловить синтаксические ошибки уже на телефоне при запуске. Студия берёт рутину на себя: структура проекта, шаблоны, проверка кода, заметки, задачи, резервные копии — и **сборка прямо в студии** в один готовый `.lua`-файл.
 
 > Сложные задачи. Простые инструменты.
 
@@ -51,9 +51,9 @@
 | | Модуль | Что даёт |
 |---|---|---|
 | ⌘ | **Проекты** | Создание проекта в один клик, файл `.ggds`, понятная структура и сборка шаг за шагом |
-| ▦ | **Библиотека** | **110 шаблонов**: интерфейсы и меню, работа со строками, файлы, хуки, API GameGuardian |
-| ⚡ | **Компиляция** | Сборка проекта в готовый Lua-скрипт **прямо в студии** — без внешних тулчейнов и ПК |
-| ⌁ | **Инструменты** | Проверка синтаксиса, сравнение файлов, заметки, управление задачами проекта |
+| ▦ | **Библиотека** | **200 шаблонов**: интерфейсы и меню, работа со строками, файлы, отладка, API GameGuardian |
+| ⚡ | **Сборка** | Сборка проекта в готовый Lua-скрипт **прямо в студии** — без внешних тулчейнов и ПК |
+| ⌁ | **Инструменты** | Проверка синтаксиса, сравнение файлов, заметки, задачи, общий поиск и радар проекта |
 | ✳ | **Своё** | Собственные Lua-блоки рядом с готовыми шаблонами — никаких ограничений на логику |
 | ⛨ | **Надёжность** | Резервные копии, просмотр TODO по проекту, поиск ошибок **до** запуска |
 
@@ -61,17 +61,17 @@
 
 ## 🚀 Быстрый старт
 
-**01 · Скачай архив**
-Возьми актуальную версию на [сайте студии](https://ggstudio.freedev.app) — на Android-устройство.
+**01 · Скачай файл**
+Открой [файл студии на GitHub](https://github.com/nearzvx/GGDevStudio/blob/main/GG_Developer_Studio.lua), нажми **Download raw file** и скачай его на Android-устройство.
 
-**02 · Распакуй и запусти**
+**02 · Запусти через GameGuardian**
 
 ```
 Download/
 └── GG_Developer_Studio.lua   →  открыть через GameGuardian
 ```
 
-> Важно: извлекай **архив целиком**, а не один файл — студия использует соседние ресурсы.
+> Для проверки обновлений нужен доступ к публичным файлам репозитория GitHub. Скачанный Lua-файл можно запустить отдельно; архив и файл доступа не требуются.
 
 **03 · Начни создавать**
 
@@ -88,25 +88,25 @@ Download/
 ```
 ┌──────────────┐    ┌───────────────┐    ┌──────────────┐    ┌──────────────┐
 │   Project    │ →  │   Templates   │ →  │    Check     │ →  │    Build     │
-│  .ggds файл  │    │ 110 шаблонов  │    │   синтаксис  │    │  ready.lua   │
+│  .ggds файл  │    │ 200 шаблонов  │    │   синтаксис  │    │  ready.lua   │
 └──────────────┘    └───────────────┘    └──────────────┘    └──────────────┘
        ↑                    ↑                    ↑                   │
        └──────────  Заметки · Задачи · TODO · Бэкапы  ←───────────────┘
 ```
 
-Студия сама следит за связностью проекта: ты добавляешь блоки, она собирает их в один скрипт с правильным порядком и служебной обвязкой.
+Ты добавляешь пункты и Lua-блоки, а студия собирает их в один файл с меню и служебной обвязкой. Проверка синтаксиса не гарантирует правильной работы пользовательского кода.
 
 ---
 
 ## 📚 Библиотека шаблонов
 
-**110 готовых блоков**, чтобы не начинать с пустого файла:
+**200 готовых блоков**, чтобы не начинать с пустого файла:
 
-- **Интерфейсы** — меню, списки, переключатели, диалоги, всплывающие окна
+- **Интерфейсы** — меню, списки, диалоги, уведомления
 - **Строки и таблицы** — форматирование, парсинг, утилиты
 - **Файлы** — чтение/запись, работа с путями, конфиги
 - **GameGuardian API** — типовые обёртки и паттерны вызовов
-- **Заготовки проектов** — готовые каркасы под разные типы скриптов
+- **Отладка и примеры** — проверки, форматирование и заготовки действий
 
 Шаблон можно взять целиком, обрезать до нужного или использовать как шпаргалку по синтаксису.
 
@@ -118,9 +118,9 @@ Download/
 |---|---|
 | Устройство | Android |
 | Среда | [GameGuardian](https://gameguardian.net) (актуальная версия) |
-| Сеть | Интернет обязателен — студия проверяет сервер при запуске |
-| Файлы | Архив распакован целиком в `Download` |
-| Версия | `0.16` (см. `manifest.json`) |
+| Сеть | Интернет обязателен — студия проверяет manifest.json на GitHub при запуске |
+| Файлы | Lua-файл в `Download`; проектам нужна запись в эту папку |
+| Версия | `0.17` (см. `manifest.json`) |
 
 Совместимость зависит от версии среды и устройства. Если сервер недоступен — запуск будет остановлен с сообщением в студии.
 
@@ -140,11 +140,23 @@ GGDevStudio/
 
 ---
 
+## 🆕 Обновление 0.17
+
+- При обнаружении новой версии появляется кнопка **«Перейти к скачиванию»**: она копирует ссылку на страницу файла GitHub. Вставь её в браузер и нажми **Download raw file**.
+- Пока установлена устаревшая версия, запуск студии останавливается. Если GitHub недоступен, проверка также не завершится.
+- **0.16:** главный экран с подписью разработчика BinaryMoon, сворачивание в GameGuardian, поиск по студии, радар проекта и 200 шаблонов.
+
+### Публикация обновления
+
+Загрузи новый `GG_Developer_Studio.lua` в корень ветки `main`, затем обнови `manifest.json` с тем же номером версии. В Lua-файле должны совпадать `RELEASE` и `VERSION`; если релиз упакован, номер `RELEASE` в заголовке упаковщика тоже должен совпадать. После публикации GitHub может несколько минут отдавать старые файлы из кэша.
+
+---
+
 ## 🗺️ Планы
 
 - [x] Проекты, шаблоны и сборка внутри студии
 - [x] Проверка синтаксиса, сравнение файлов, задачи и заметки
-- [ ] Расширение библиотеки шаблонов
+- [x] Расширение библиотеки до 200 шаблонов
 - [ ] Улучшение движка сборки (минификация, управление модулями)
 - [ ] Ещё инструменты отладки
 
@@ -163,13 +175,13 @@ Lua-скрипт для GameGuardian, который превращает тел
 <details>
 <summary><b>Как начать пользоваться?</b></summary>
 
-Скачай архив с сайта, извлеки его **целиком** в `Download` и открой файл студии в GameGuardian.
+Скачай Lua-файл из репозитория, помести его в `Download` и открой через GameGuardian.
 </details>
 
 <details>
 <summary><b>Нужен ли интернет?</b></summary>
 
-Да. Для запуска студии требуется соединение с сервером; если он недоступен — запуск останавливается.
+Да. При запуске студия проверяет `manifest.json` на GitHub; если GitHub недоступен — запуск останавливается.
 </details>
 
 <details>
@@ -221,8 +233,8 @@ Lua-скрипт для GameGuardian, который превращает тел
 <details>
 <summary><b>🇬🇧 English summary</b></summary>
 
-**GG Developer Studio** — a Lua IDE that runs inside **GameGuardian** on Android and is itself written in 100% Lua. It gives you projects (`.ggds`), a library of **110 templates** (menus, strings, files, GameGuardian API), built-in **syntax checking**, file diff, notes, project tasks and backups — plus **in-studio compilation** of a finished, ready-to-run `.lua` script. No PC, no external toolchain.
+**GG Developer Studio** — a Lua IDE that runs inside **GameGuardian** on Android and is itself written in 100% Lua. It gives you projects (`.ggds`), a library of **200 templates** (menus, strings, files, GameGuardian API), built-in **syntax checking**, file comparison, notes, project tasks and backups — plus **in-studio assembly** of a finished, ready-to-run `.lua` script. No PC, no external toolchain.
 
-**Requirements:** Android, GameGuardian, internet connection; extract the whole archive into `Download`, then open the studio file in GameGuardian. Builds land in `Download`. Licensed under MPL-2.0.
+**Requirements:** Android, GameGuardian, internet connection to GitHub; download the Lua file to `Download`, then open it in GameGuardian. Builds land in `Download`. Licensed under MPL-2.0.
 
 </details>
