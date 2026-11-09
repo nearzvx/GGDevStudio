@@ -5,7 +5,7 @@
 **A workspace for creating Lua projects inside GameGuardian.**  
 Build menus, use templates and assemble scripts without leaving the studio.
 
-[![Version](https://img.shields.io/badge/version-0.23-7c5cff?style=for-the-badge)](manifest.json)
+[![Version](https://img.shields.io/badge/version-0.24-7c5cff?style=for-the-badge)](manifest.json)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.23
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.24
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     interface templates
@@ -75,7 +75,7 @@ An internet connection to the public GitHub repository is required for the start
 New project  →  add templates  →  edit your code  →  build  →  Lua script
 ```
 
-Projects, notes, tasks and generated files are stored in **`Download`**. Keep backups of any files you want to preserve.
+Projects, notes, tasks and generated files are stored in the selected workspace (default: **`Download`**). Keep backups of any files you want to preserve.
 
 ## 📚 Template library
 
@@ -96,8 +96,8 @@ Templates are starting points. Review and adapt them for your project.
 | Device | Android |
 | Environment | [GameGuardian](https://gameguardian.net) |
 | Internet | Required to check `manifest.json` on GitHub at startup |
-| Storage | Permission to read and write in `Download` |
-| Version | `0.23` (see `manifest.json`) |
+| Storage | Permission to access the workspace and module directories and write settings in `Download` |
+| Version | `0.24` (see `manifest.json`) |
 
 Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
 
@@ -123,6 +123,13 @@ GGDevStudio/
 
 ## 🆕 Release notes
 
+### 0.24
+
+- Choose an existing **workspace directory** for projects, builds and notes, and a separate **modules directory** containing `modules.txt`.
+- Set the paths at first launch or later in **Tools → Studio and module folders**. Settings are stored in `Download/ggds_paths.cfg`. Directories must already exist and be accessible to GameGuardian; the studio does not create them or guarantee that access is available.
+- Changing workspace does not move files. If a project is open, a separate confirmation closes it; save changes first. Loading modules from a new folder requires trust approval.
+- The updater still saves the new studio Lua file to `Download`; it does not move files or update modules.
+
 ### 0.23
 
 - Quick Lab now has **150 small operations**, and 50 matching examples bring the library to **350 templates**.
@@ -131,7 +138,7 @@ GGDevStudio/
 
 ### 0.22 · Module Hub
 
-Extract the **`modules`** folder from the release archive into `Download`, so `Download/modules/modules.txt` and the 15 Lua files are together. Optional CSV/TSV examples are in `examples`. Approve trusted modules at startup, then open **Tools → Module Hub**. The studio can run without modules; use the hub to inspect errors or reload them.
+Extract the **`modules`** folder anywhere accessible, with `modules.txt` and the 15 Lua files together, and select it at startup. The default is `Download/modules`. Optional CSV/TSV examples are in `examples`. Approve trusted modules at startup, then open **Tools → Module Hub**. The studio can run without modules; use the hub to inspect errors or reload them.
 
 The original five modules provide project metrics, text-based code auditing, a literal `require` dependency map, CSV-to-Lua conversion and TSV translation-table generation. Analysis is heuristic and does not guarantee security or completeness. CSV and TSV are data, not executable code; adding generated Lua requires confirmation. Generated tables are local to the added block. CSV fields are strings.
 
@@ -196,7 +203,7 @@ Yes. The studio checks the GitHub manifest at startup and stops if it cannot com
 
 <details><summary><b>Where are my projects stored?</b></summary>
 
-In `Download`, along with notes, tasks and generated scripts. Keep your own backups.
+In the selected workspace (default: `Download`), along with notes, tasks and generated scripts. Keep your own backups.
 </details>
 
 <details><summary><b>Can I switch back to GameGuardian?</b></summary>
