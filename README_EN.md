@@ -5,7 +5,7 @@
 **A workspace for creating Lua projects inside GameGuardian.**  
 Build menus, use templates and assemble scripts without leaving the studio.
 
-[![Version](https://img.shields.io/badge/version-0.20-7c5cff?style=for-the-badge)](manifest.json)
+[![Version](https://img.shields.io/badge/version-0.21-7c5cff?style=for-the-badge)](manifest.json)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.20
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.21
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     interface templates
@@ -97,7 +97,7 @@ Templates are starting points. Review and adapt them for your project.
 | Environment | [GameGuardian](https://gameguardian.net) |
 | Internet | Required to check `manifest.json` on GitHub at startup |
 | Storage | Permission to read and write in `Download` |
-| Version | `0.20` (see `manifest.json`) |
+| Version | `0.21` (see `manifest.json`) |
 
 Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
 
@@ -120,6 +120,10 @@ GGDevStudio/
 
 
 ## 🆕 Release notes
+
+### 0.21
+
+- If GameGuardian returns an unreadable path containing `?`, select the studio file manually. The selected file is checked; in this situation the app cannot verify it is the file actually running.
 
 ### 0.20
 

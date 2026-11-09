@@ -5,7 +5,7 @@
 **Среда разработки Lua-проектов прямо внутри GameGuardian.**
 Пишешь код, создаёшь меню и собираешь готовый скрипт — не выходя из студии.
 
-[![Version](https://img.shields.io/badge/version-0.20-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
+[![Version](https://img.shields.io/badge/version-0.21-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.20
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.21
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     шаблоны интерфейса
@@ -120,7 +120,7 @@ Download/
 | Среда | [GameGuardian](https://gameguardian.net) (актуальная версия) |
 | Сеть | Интернет обязателен — студия проверяет manifest.json на GitHub при запуске |
 | Файлы | Lua-файл в `Download`; проектам нужна запись в эту папку |
-| Версия | `0.20` (см. `manifest.json`) |
+| Версия | `0.21` (см. `manifest.json`) |
 
 Совместимость зависит от версии среды и устройства. Если сервер недоступен — запуск будет остановлен с сообщением в студии.
 
@@ -139,7 +139,11 @@ GGDevStudio/
 
 ---
 
-## 🆕 Обновление 0.20
+## 🆕 Обновление 0.21
+
+- Исправлен запуск, когда GameGuardian возвращает недоступный путь с `?`: при ошибке чтения выбери файл студии вручную. Проверяется именно выбранный файл; определить, совпадает ли он с запущенным файлом, при таком сбое невозможно.
+
+### Изменения 0.20
 
 - **Quick Lab:** 100 небольших инструментов для работы с текстом, числами, кодированием, списками и путями. Результаты можно скопировать; исходный ввод не изменяется.
 - Добавлены **100 шаблонов**, демонстрирующих те же преобразования в Lua. Всего в библиотеке 300 шаблонов.
