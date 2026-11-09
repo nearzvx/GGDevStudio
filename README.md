@@ -3,22 +3,22 @@
 # ✳ GG Developer Studio
 
 **Среда разработки Lua-проектов прямо внутри GameGuardian.**
-Пишешь код, собираешь меню, собираешь готовый скрипт — не выходя из студии.
+Пишешь код, создаёшь меню и собираешь готовый скрипт — не выходя из студии.
 
-[![Version](https://img.shields.io/badge/version-0.17-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
+[![Version](https://img.shields.io/badge/version-0.18-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/nearzvx/GGDevStudio?style=for-the-badge&color=ffcc33)](https://github.com/nearzvx/GGDevStudio/stargazers)
 
-[**Сайт студии**](https://ggstudio.freedev.app) · [**Скачать**](https://github.com/nearzvx/GGDevStudio/blob/main/GG_Developer_Studio.lua) · [**Ошибка**](https://github.com/nearzvx/GGDevStudio/issues/new) · [**Идея**](https://github.com/nearzvx/GGDevStudio/issues/new)
+[**English**](README_EN.md) · [**Сайт студии**](https://ggstudio.freedev.app) · [**Скачать**](https://github.com/nearzvx/GGDevStudio/blob/main/GG_Developer_Studio.lua) · [**Ошибка**](https://github.com/nearzvx/GGDevStudio/issues/new) · [**Идея**](https://github.com/nearzvx/GGDevStudio/issues/new)
 
 </div>
 
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.17
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.18
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     шаблоны интерфейса
@@ -120,7 +120,7 @@ Download/
 | Среда | [GameGuardian](https://gameguardian.net) (актуальная версия) |
 | Сеть | Интернет обязателен — студия проверяет manifest.json на GitHub при запуске |
 | Файлы | Lua-файл в `Download`; проектам нужна запись в эту папку |
-| Версия | `0.17` (см. `manifest.json`) |
+| Версия | `0.18` (см. `manifest.json`) |
 
 Совместимость зависит от версии среды и устройства. Если сервер недоступен — запуск будет остановлен с сообщением в студии.
 
@@ -140,7 +140,13 @@ GGDevStudio/
 
 ---
 
-## 🆕 Обновление 0.17
+## 🆕 Обновление 0.18
+
+- При запуске выбирается язык: русский, английский (США или Великобритания), упрощённый китайский или арабский. Английские варианты используют общий перевод интерфейса.
+- Перевод пока **неполный**: основной экран и основные команды доступны на выбранном языке, некоторые сообщения и названия примеров могут оставаться на русском. Код и пользовательские данные не переводятся.
+- Язык выбирается при каждом запуске.
+
+### Изменения 0.17
 
 - При обнаружении новой версии появляется кнопка **«Перейти к скачиванию»**: она копирует ссылку на страницу файла GitHub. Вставь её в браузер и нажми **Download raw file**.
 - Пока установлена устаревшая версия, запуск студии останавливается. Если GitHub недоступен, проверка также не завершится.
