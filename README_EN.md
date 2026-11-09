@@ -5,7 +5,7 @@
 **A workspace for creating Lua projects inside GameGuardian.**  
 Build menus, use templates and assemble scripts without leaving the studio.
 
-[![Version](https://img.shields.io/badge/version-0.18-7c5cff?style=for-the-badge)](manifest.json)
+[![Version](https://img.shields.io/badge/version-0.20-7c5cff?style=for-the-badge)](manifest.json)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.18
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.20
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     interface templates
@@ -45,7 +45,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 | | Module | What it does |
 |---|---|---|
 | ⌘ | **Projects** | Create and manage `.ggds` projects |
-| ▦ | **Library** | Explore **200 templates** for menus, strings, files, debugging and the GameGuardian API |
+| ▦ | **Library** | Explore **300 templates** for menus, strings, files, debugging and the GameGuardian API |
 | ⚡ | **Build** | Assemble project items and Lua blocks into a script with a menu |
 | ⌁ | **Tools** | Check syntax, compare files, search, and manage notes and tasks |
 | ◈ | **Project radar** | Review the project's saved state, tasks, placeholders and TODO markers |
@@ -79,7 +79,7 @@ Projects, notes, tasks and generated files are stored in **`Download`**. Keep ba
 
 ## 📚 Template library
 
-The studio contains **200 examples**, covering:
+The studio contains **300 examples**, covering:
 
 - **Interfaces:** choices, menus, dialogs and notifications
 - **Strings and tables:** formatting, parsing and common operations
@@ -97,9 +97,9 @@ Templates are starting points. Review and adapt them for your project.
 | Environment | [GameGuardian](https://gameguardian.net) |
 | Internet | Required to check `manifest.json` on GitHub at startup |
 | Storage | Permission to read and write in `Download` |
-| Version | `0.18` (see `manifest.json`) |
+| Version | `0.20` (see `manifest.json`) |
 
-Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The packed release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
+Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
 
 ## 🌐 Languages
 
@@ -111,16 +111,28 @@ At startup, choose Russian, English (US), English (UK), Simplified Chinese or Ar
 
 ```text
 GGDevStudio/
-├── GG_Developer_Studio.lua   # packed studio script
+├── GG_Developer_Studio.lua   # Lua studio script
 ├── manifest.json             # release version
 ├── README.md                 # Russian documentation
 ├── README_EN.md              # English documentation
 └── LICENSE                   # MPL-2.0
 ```
 
-The release script is packed to make casual reading harder. This is **not strong protection**: the code can be recovered from the file.
 
 ## 🆕 Release notes
+
+### 0.20
+
+- Added **Quick Lab**: 100 small tools for text, numbers, encoding, lists and paths. Results can be copied without modifying the input.
+- Added 100 templates demonstrating those same transformations in Lua, bringing the library to 300 templates.
+- Refreshed the main screen. Some new labels remain in Russian when another language is selected.
+- Case conversion, lengths and reversal use ASCII/bytes rather than full Unicode characters.
+
+### 0.19
+
+- With user consent, the studio downloads a new release to `Download`. Run the new file in GameGuardian and delete the old one manually **after the new version starts successfully**.
+- At startup, the current file is compared byte-for-byte with the official GitHub file. This checks content equality, **not the file’s download origin**. GitHub caching can cause temporary mismatches after a release.
+- External text Lua files can be syntax-checked and, if `string.dump` is supported, compiled to `.luac` bytecode without executing the source. Bytecode may not be compatible with other Lua or GameGuardian versions.
 
 ### 0.18
 
@@ -129,23 +141,23 @@ The release script is packed to make casual reading harder. This is **not strong
 
 ### 0.17
 
-- Added **Go to download** when a newer version is found. It copies a GitHub page link; open it in a browser and choose **Download raw file**.
+- Added a GitHub download-link option. In 0.19 this is offered when file integrity does not match.
 - Startup stops when the installed version is outdated or the update check cannot be completed.
 
 ### 0.16
 
 - Added the BinaryMoon developer credit, minimise/restore, studio search and project radar.
-- Expanded the library to 200 templates.
+- Expanded the template library.
 
 ### Publishing an update
 
-Upload the new `GG_Developer_Studio.lua` to the root of the `main` branch, then update `manifest.json` to the same version. The source's `RELEASE` and `VERSION` values must match; for a packed release, the wrapper's `RELEASE` must match too. GitHub may temporarily serve cached files after publishing.
+Upload the new `GG_Developer_Studio.lua` to the root of the `main` branch, then update `manifest.json` to the same version. The studio file and manifest must have matching version numbers. GitHub may temporarily serve cached files after publishing.
 
 ## 🗺️ Roadmap
 
 - [x] Projects, templates and in-studio builds
 - [x] Syntax checks, file comparison, tasks and notes
-- [x] 200 templates
+- [x] 300 templates
 - [ ] Improve the build engine and module management
 - [ ] Add more debugging tools
 
