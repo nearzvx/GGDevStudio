@@ -3,3 +3,13 @@ code_audit
 dependency_map
 csv_builder
 language_builder
+code_search
+title_check
+duplicate_blocks
+api_inventory
+marker_board
+syntax_batch
+line_review
+project_outline
+config_builder
+menu_builder
