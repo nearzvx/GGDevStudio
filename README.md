@@ -5,7 +5,7 @@
 **Среда разработки Lua-проектов прямо внутри GameGuardian.**
 Пишешь код, создаёшь меню и собираешь готовый скрипт — не выходя из студии.
 
-[![Version](https://img.shields.io/badge/version-0.22-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
+[![Version](https://img.shields.io/badge/version-0.23-7c5cff?style=for-the-badge)](https://ggstudio.freedev.app)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.22
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.23
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     шаблоны интерфейса
@@ -51,7 +51,7 @@
 | | Модуль | Что даёт |
 |---|---|---|
 | ⌘ | **Проекты** | Создание проекта в один клик, файл `.ggds`, понятная структура и сборка шаг за шагом |
-| ▦ | **Библиотека** | **300 шаблонов**: интерфейсы и меню, работа со строками, файлы, отладка, API GameGuardian |
+| ▦ | **Библиотека** | **350 шаблонов**: интерфейсы и меню, работа со строками, файлы, отладка, API GameGuardian |
 | ⚡ | **Сборка** | Сборка проекта в готовый Lua-скрипт **прямо в студии** — без внешних тулчейнов и ПК |
 | ⌁ | **Инструменты** | Проверка синтаксиса, сравнение файлов, заметки, задачи, общий поиск и радар проекта |
 | ✳ | **Своё** | Собственные Lua-блоки рядом с готовыми шаблонами — никаких ограничений на логику |
@@ -61,18 +61,14 @@
 
 ## 🚀 Быстрый старт
 
-**01 · Скачайте файлы архивом и распаковывайте в папку Downloads/**
+**01 · Скачай файл**
 Открой [файл студии на GitHub](https://github.com/nearzvx/GGDevStudio/blob/main/GG_Developer_Studio.lua), нажми **Download raw file** и скачай его на Android-устройство.
 
 **02 · Запусти через GameGuardian**
 
 ```
-modules/
-└── все файлы вместе с modules.txt → ОБЯЗАТЕЛЬНЫ! что бы у вас работали модули, на дополнительные возможности инструментов.
 Download/
 └── GG_Developer_Studio.lua   →  открыть через GameGuardian
-└── manifest.json → Обязательный файл проверки версии игры.
-└──
 ```
 
 > Для проверки обновлений нужен доступ к публичным файлам репозитория GitHub. Скачанный Lua-файл можно запустить отдельно; архив и файл доступа не требуются.
@@ -92,7 +88,7 @@ Download/
 ```
 ┌──────────────┐    ┌───────────────┐    ┌──────────────┐    ┌──────────────┐
 │   Project    │ →  │   Templates   │ →  │    Check     │ →  │    Build     │
-│  .ggds файл  │    │ 300 шаблонов  │    │   синтаксис  │    │  ready.lua   │
+│  .ggds файл  │    │ 350 шаблонов  │    │   синтаксис  │    │  ready.lua   │
 └──────────────┘    └───────────────┘    └──────────────┘    └──────────────┘
        ↑                    ↑                    ↑                   │
        └──────────  Заметки · Задачи · TODO · Бэкапы  ←───────────────┘
@@ -104,7 +100,7 @@ Download/
 
 ## 📚 Библиотека шаблонов
 
-**300 готовых блоков**, чтобы не начинать с пустого файла:
+**350 готовых блоков**, чтобы не начинать с пустого файла:
 
 - **Интерфейсы** — меню, списки, диалоги, уведомления
 - **Строки и таблицы** — форматирование, парсинг, утилиты
@@ -124,7 +120,7 @@ Download/
 | Среда | [GameGuardian](https://gameguardian.net) (актуальная версия) |
 | Сеть | Интернет обязателен — студия проверяет manifest.json на GitHub при запуске |
 | Файлы | Lua-файл в `Download`; проектам нужна запись в эту папку |
-| Версия | `0.22` (см. `manifest.json`) |
+| Версия | `0.23` (см. `manifest.json`) |
 
 Совместимость зависит от версии среды и устройства. Если сервер недоступен — запуск будет остановлен с сообщением в студии.
 
@@ -146,11 +142,18 @@ GGDevStudio/
 
 ---
 
-## 🆕 Обновление 0.22
+## 🆕 Обновление 0.23
+
+- Quick Lab расширен со 100 до **150 небольших операций** для текста, символов и чисел. Добавлены 50 примеров на основе тех же операций: всего в библиотеке **350 шаблонов**.
+- Добавлены десять модулей: Code Search, Title Check, Duplicate Blocks, API Inventory, Marker Board, Syntax Batch, Line Review, Project Outline, Config Builder и Menu Builder. Всего в архиве **15 модулей**.
+- Config Builder и Menu Builder превращают текстовые данные в Lua-блок после подтверждения; используйте таблицы внутри вставленного блока. Анализаторы выполняют эвристический поиск и не заменяют полноценный анализ или тестирование.
+- Новые названия и сообщения пока преимущественно на русском. Работа с длиной, регистром и обращением текста может быть байтовой/ASCII, а не Unicode.
+
+### Изменения 0.22
 
 ### Модули
 
-В архиве находятся пять отдельных Lua-модулей. Распакуй папку **`modules` целиком в `Download`**: путь должен быть `Download/modules/modules.txt`, а рядом — пять `.lua`-файлов. Примеры CSV и TSV находятся в `examples`; их можно скопировать в `Download` для теста. Запусти студию и подтверди загрузку доверенных модулей. Доступ: **Инструменты → Module Hub**. Если модулей нет, студия продолжит работать без них; в Module Hub можно посмотреть ошибки или перезагрузить модули.
+В архиве находятся 15 отдельных Lua-модулей. Распакуй папку **`modules` целиком в `Download`**: путь должен быть `Download/modules/modules.txt`, а рядом — 15 `.lua`-файлов. Примеры CSV и TSV находятся в `examples`; их можно скопировать в `Download` для теста. Запусти студию и подтверди загрузку доверенных модулей. Доступ: **Инструменты → Module Hub**. Если модулей нет, студия продолжит работать без них; в Module Hub можно посмотреть ошибки или перезагрузить модули.
 
 | Модуль | Возможности |
 |---|---|
@@ -159,6 +162,16 @@ GGDevStudio/
 | Dependency Map | Обзор буквальных вызовов `require` |
 | CSV → Lua | Преобразование CSV в таблицу Lua и добавление блока в проект |
 | Language Pack | Преобразование многоязычных данных TSV в таблицу переводов Lua |
+| Code Search | Поиск точного текста в Lua-блоках с номерами строк |
+| Title Check | Повторяющиеся и пустые названия пунктов |
+| Duplicate Blocks | Точные повторы Lua-блоков |
+| API Inventory | Текстовый обзор вызовов gg API |
+| Marker Board | Маркеры TODO, FIXME, NOTE и HACK |
+| Syntax Batch | Проверка синтаксиса отдельных блоков без запуска |
+| Line Review | Строки длиннее заданного порога в байтах |
+| Project Outline | Отчёт о структуре пунктов проекта |
+| Config Builder | Преобразование TXT key=value в таблицу Lua |
+| Menu Builder | Преобразование списка строк в меню Lua |
 
 Анализаторы используют поиск по тексту и могут ошибаться; они не гарантируют безопасность или полноту. Данные CSV/TSV не выполняются как код; результат добавляется в проект только после подтверждения. Таблицы создаются внутри добавленного Lua-блока: используй их в этом же блоке. Все поля CSV импортируются как строки.
 
@@ -177,7 +190,7 @@ GGDevStudio/
 ### Изменения 0.20
 
 - **Quick Lab:** 100 небольших инструментов для работы с текстом, числами, кодированием, списками и путями. Результаты можно скопировать; исходный ввод не изменяется.
-- Добавлены **100 шаблонов**, демонстрирующих те же преобразования в Lua. Всего в библиотеке 300 шаблонов.
+- Добавлены **100 шаблонов**, демонстрирующих те же преобразования в Lua. Всего в библиотеке 350 шаблонов.
 - Обновлён главный экран. Некоторые новые пункты пока остаются на русском при выборе другого языка.
 - Инструменты регистров, длины и обращения работают с байтами/ASCII, а не со всеми символами Unicode.
 
@@ -209,7 +222,7 @@ GGDevStudio/
 
 - [x] Проекты, шаблоны и сборка внутри студии
 - [x] Проверка синтаксиса, сравнение файлов, задачи и заметки
-- [x] Расширение библиотеки до 300 шаблонов
+- [x] Расширение библиотеки до 350 шаблонов
 - [ ] Улучшение движка сборки (минификация, управление модулями)
 - [ ] Ещё инструменты отладки
 
@@ -280,7 +293,7 @@ Lua-скрипт для GameGuardian, который превращает тел
 <details>
 <summary><b>🇬🇧 English summary</b></summary>
 
-**GG Developer Studio** — a Lua IDE that runs inside **GameGuardian** on Android and is itself written in 100% Lua. It gives you projects (`.ggds`), a library of **300 templates** (menus, strings, files, GameGuardian API), built-in **syntax checking**, file comparison, notes, project tasks and backups — plus **in-studio assembly** of a finished, ready-to-run `.lua` script. No PC, no external toolchain.
+**GG Developer Studio** — a Lua IDE that runs inside **GameGuardian** on Android and is itself written in 100% Lua. It gives you projects (`.ggds`), a library of **350 templates** (menus, strings, files, GameGuardian API), built-in **syntax checking**, file comparison, notes, project tasks and backups — plus **in-studio assembly** of a finished, ready-to-run `.lua` script. No PC, no external toolchain.
 
 **Requirements:** Android, GameGuardian, internet connection to GitHub; download the Lua file to `Download`, then open it in GameGuardian. Builds land in `Download`. Licensed under MPL-2.0.
 

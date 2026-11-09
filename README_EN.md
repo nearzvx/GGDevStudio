@@ -5,7 +5,7 @@
 **A workspace for creating Lua projects inside GameGuardian.**  
 Build menus, use templates and assemble scripts without leaving the studio.
 
-[![Version](https://img.shields.io/badge/version-0.22-7c5cff?style=for-the-badge)](manifest.json)
+[![Version](https://img.shields.io/badge/version-0.23-7c5cff?style=for-the-badge)](manifest.json)
 [![Lua](https://img.shields.io/badge/Lua-100%25-2C2D72?style=for-the-badge&logo=lua&logoColor=white)](https://www.lua.org)
 [![Platform](https://img.shields.io/badge/Android-GameGuardian-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://gameguardian.net)
 [![License](https://img.shields.io/badge/license-MPL--2.0-e0407a?style=for-the-badge)](LICENSE)
@@ -18,7 +18,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 ---
 
 ```text
-  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.22
+  ✳  GG DEVELOPER STUDIO  ·  workspace                    v0.23
   ──────────────────────────────────────────────────────────────
   project    my_next_idea.ggds        Lua · UTF-8 · GameGuardian
   blocks     interface templates
@@ -45,7 +45,7 @@ Build menus, use templates and assemble scripts without leaving the studio.
 | | Module | What it does |
 |---|---|---|
 | ⌘ | **Projects** | Create and manage `.ggds` projects |
-| ▦ | **Library** | Explore **300 templates** for menus, strings, files, debugging and the GameGuardian API |
+| ▦ | **Library** | Explore **350 templates** for menus, strings, files, debugging and the GameGuardian API |
 | ⚡ | **Build** | Assemble project items and Lua blocks into a script with a menu |
 | ⌁ | **Tools** | Check syntax, compare files, search, and manage notes and tasks |
 | ◈ | **Project radar** | Review the project's saved state, tasks, placeholders and TODO markers |
@@ -79,7 +79,7 @@ Projects, notes, tasks and generated files are stored in **`Download`**. Keep ba
 
 ## 📚 Template library
 
-The studio contains **300 examples**, covering:
+The studio contains **350 examples**, covering:
 
 - **Interfaces:** choices, menus, dialogs and notifications
 - **Strings and tables:** formatting, parsing and common operations
@@ -97,7 +97,7 @@ Templates are starting points. Review and adapt them for your project.
 | Environment | [GameGuardian](https://gameguardian.net) |
 | Internet | Required to check `manifest.json` on GitHub at startup |
 | Storage | Permission to read and write in `Download` |
-| Version | `0.22` (see `manifest.json`) |
+| Version | `0.23` (see `manifest.json`) |
 
 Compatibility depends on the device and GameGuardian version. If GitHub is unreachable, startup stops with a message. The release and the minimise/restore feature have been tested in a simulated Lua environment, but still need testing on actual devices.
 
@@ -123,11 +123,17 @@ GGDevStudio/
 
 ## 🆕 Release notes
 
+### 0.23
+
+- Quick Lab now has **150 small operations**, and 50 matching examples bring the library to **350 templates**.
+- Ten new modules bring the total to **15**: Code Search, Title Check, Duplicate Blocks, API Inventory, Marker Board, Syntax Batch, Line Review, Project Outline, Config Builder and Menu Builder. The latter two turn text data into Lua blocks after confirmation. Use generated local tables inside the inserted block.
+- Analyses are heuristic and are not complete security reviews. New labels and messages are mostly in Russian; byte/ASCII operations are not full Unicode handling.
+
 ### 0.22 · Module Hub
 
-Extract the **`modules`** folder from the release archive into `Download`, so `Download/modules/modules.txt` and the five Lua files are together. Optional CSV/TSV examples are in `examples`. Approve trusted modules at startup, then open **Tools → Module Hub**. The studio can run without modules; use the hub to inspect errors or reload them.
+Extract the **`modules`** folder from the release archive into `Download`, so `Download/modules/modules.txt` and the 15 Lua files are together. Optional CSV/TSV examples are in `examples`. Approve trusted modules at startup, then open **Tools → Module Hub**. The studio can run without modules; use the hub to inspect errors or reload them.
 
-The five modules provide project metrics, text-based code auditing, a literal `require` dependency map, CSV-to-Lua conversion and TSV translation-table generation. Analysis is heuristic and does not guarantee security or completeness. CSV and TSV are data, not executable code; adding generated Lua requires confirmation. Generated tables are local to the added block. CSV fields are strings.
+The original five modules provide project metrics, text-based code auditing, a literal `require` dependency map, CSV-to-Lua conversion and TSV translation-table generation. Analysis is heuristic and does not guarantee security or completeness. CSV and TSV are data, not executable code; adding generated Lua requires confirmation. Generated tables are local to the added block. CSV fields are strings.
 
 **Trust:** modules are unsandboxed Lua with the studio's full privileges and are not checked against GitHub. Load only files you trust. The automatic updater updates **only the main studio file**; install or update modules separately from the release archive. Publish the `modules` folder and `modules.txt` with the repository files.
 
@@ -142,7 +148,7 @@ To add a module, put its ID (letters, digits, `_` or `-`) in `modules.txt` and p
 ### 0.20
 
 - Added **Quick Lab**: 100 small tools for text, numbers, encoding, lists and paths. Results can be copied without modifying the input.
-- Added 100 templates demonstrating those same transformations in Lua, bringing the library to 300 templates.
+- Added 100 templates demonstrating those same transformations in Lua, bringing the library to 350 templates.
 - Refreshed the main screen. Some new labels remain in Russian when another language is selected.
 - Case conversion, lengths and reversal use ASCII/bytes rather than full Unicode characters.
 
@@ -175,7 +181,7 @@ Upload the new `GG_Developer_Studio.lua` to the root of the `main` branch, then 
 
 - [x] Projects, templates and in-studio builds
 - [x] Syntax checks, file comparison, tasks and notes
-- [x] 300 templates
+- [x] 350 templates
 - [ ] Improve the build engine and module management
 - [ ] Add more debugging tools
 
